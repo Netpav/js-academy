@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "name": "js-academy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "dev": "static public",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "bower": "^1.7.7",
+    "node-static": "^0.7.7"
+  }
+}

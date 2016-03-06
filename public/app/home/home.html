@@ -1,0 +1,73 @@
+
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <a href="#/" class="navbar-brand logo" src="./images/artin.png"></a>
+    <a href="#/" class="navbar-brand">{{ appName }}</a>
+
+    <ul class="nav navbar-nav">
+      <li class="active"><a ui-sref="home">Contacts</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">{{contact.name}} <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="home">Sign out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="top">
+  <div class="container">
+    <h1>Contacts</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <p class="lead">{{contacts.length}} matching contacts</p>
+    </div>
+    <div class="col-md-4">
+      <input class="form-control" placeholder="Search..." autofocus>
+    </div>
+  </div>
+
+  <br>
+
+  <table class="table table-bordered table-striped table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>E-mail</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="c in contacts">
+      <td>
+        <strong><a ui-sref="show">{{ c.name}}</a></strong><br>
+        {{ c.company}}
+      </td>
+      <td>{{ c.phone}}</td>
+      <td>
+        <a href="mailto:{{ c.email}}">{{ c.email}}</a>
+      </td>
+    </tr>
+
+<!--    <tr>
+      <td>
+        <strong><a href="show.html">{{c.name}}</a></strong><br>
+        {{c.company}}
+      </td>
+      <td>{{c.phone}}</td>
+      <td>
+        <a href="mailto:{{c.email}}"></a>
+      </td>
+    </tr>-->
+    </tbody>
+  </table>
+</div>
+
