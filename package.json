@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "postinstall": "bower install",
-    "dev": "static public",
+    // no-cache
+    "dev":"static public -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
