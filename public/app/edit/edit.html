@@ -1,25 +1,6 @@
-<div class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <a href="#/" class="navbar-brand">{{ appName }}</a>
-
-    <ul class="nav navbar-nav">
-      <li class="active"><a ui-sref="home">Contacts</a></li>
-    </ul>
-
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown">{{contact.name}}<span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a ui-sref="login" >Sign out</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</div>
-
 <div class="top">
   <div class="container">
-    <a ui-sref="show">Back to detail...</a>
+    <a ui-sref="show({id: contact.id})">Back to detail...</a>
 
     <h1>
       Edit contact<br>
@@ -53,8 +34,8 @@
 
     <br>
 
-    <a ui-sref="show" class="btn btn-primary">Save</a>
-    <a ui-sref="show" class="btn btn-link">Cancel</a>
+    <a ng-click="save()" class="btn btn-primary">Save</a>
+    <a ui-sref="show({id: contact.id})" class="btn btn-link">Cancel</a>
   </form>
 </div>
 

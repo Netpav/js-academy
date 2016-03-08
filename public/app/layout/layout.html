@@ -1,0 +1,22 @@
+<div class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <a href="#/" class="navbar-brand logo" src="./images/artin.png"></a>
+    <a href="#/" class="navbar-brand">{{ appName }}</a>
+
+    <ul class="nav navbar-nav">
+      <li class="active"><a ui-sref="home">Contacts</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">{{contact.name}} <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a ui-sref="login">Sign out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div ui-view></div>

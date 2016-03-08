@@ -6,8 +6,14 @@ var app = angular.module('sample-app');
 
 app.config(function($stateProvider){
   $stateProvider.state('show',{
-    url:'/show',
-    templateUrl:'app/show/show.html'
+    parent:'layout',
+    url:'/show/:id',
+    templateUrl:'app/show/show.html',
+    //vlastni scope pro zobrazeni
+    controller: function($scope, $stateParams, contactsService){
+      $scope.contact = contactsService.find( $stateParams.id);
+
+    }
   })
 });
 
