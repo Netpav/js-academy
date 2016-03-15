@@ -11,7 +11,13 @@ app.config(function($stateProvider){
     templateUrl:'app/show/show.html',
     //vlastni scope pro zobrazeni
     controller: function($scope, $stateParams, contactsService){
-      $scope.contact = contactsService.find( $stateParams.id);
+
+      contactsService.find($stateParams.id)
+        .then(function(contact){
+          $scope.contact=contact;
+        });
+
+      //$scope.contact = contactsService.find( $stateParams.id);
 
     }
   })

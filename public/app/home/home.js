@@ -9,8 +9,11 @@ app.config(function($stateProvider){
     parent:'layout',
     url:'/',
     templateUrl:'app/home/home.html',
-    controller: function($scope, contactsService){
-      $scope.contacts = contactsService.findAll();
+    controller: function($scope, contactsService) {
+      contactsService.findAll()
+        .then(function(contacts) {
+          $scope.contacts = contacts;
+        });
     }
   })
 });

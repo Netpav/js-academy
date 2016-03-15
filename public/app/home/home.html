@@ -25,6 +25,7 @@
           <span ng-show="sort == 'name' && !sortOrder" class="glyphicon glyphicon-triangle-bottom sort_DESC"></span>
           <span ng-show="sort == 'name' && sortOrder" class="glyphicon glyphicon-triangle-top sort_ASC"></span>
         </a>
+        <!--second solution:  <i ng-show="sort == 'name'" class="glyphicon" ng-class="{'glyphicon-chevron-up': sortOrder, 'glyphicon-chevron-down': !sortOrder}"></i> -->
       </th>
 
       <th>

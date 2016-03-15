@@ -10,7 +10,7 @@ app.config(function($stateProvider){
     url:'/edit/:id',
     templateUrl:'app/edit/edit.html',
     //vlastni scope pro zobrazeni
-    controller: function($scope, $stateParams, contactsService){
+    controller: function($scope, $stateParams,$state, contactsService){
       $scope.contact = contactsService.find( $stateParams.id);
       // po pokliku na save update
       $scope.save = function(){
@@ -20,4 +20,6 @@ app.config(function($stateProvider){
     }
   })
 });
+
+
 
