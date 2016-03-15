@@ -8,7 +8,7 @@ app.factory('contactsService', function($http) {
       console.warn('contactService.create not implemented!');
       return contact;
     },
-
+    //TODO: EDITING
     update: function(contact) {
       console.warn('contactService.update not implemented!');
       return contact;
