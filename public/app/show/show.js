@@ -10,7 +10,8 @@ app.config(function($stateProvider){
     url:'/show/:id',
     templateUrl:'app/show/show.html',
     //vlastni scope pro zobrazeni
-    controller: function($scope, $stateParams, contactsService){
+    //TODO: K cemu $state
+    controller: function($scope, $stateParams,$state, contactsService){
 
       contactsService.find($stateParams.id)
         .then(function(contact){

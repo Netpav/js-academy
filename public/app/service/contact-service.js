@@ -8,11 +8,17 @@ app.factory('contactsService', function($http) {
       console.warn('contactService.create not implemented!');
       return contact;
     },
-    //TODO: EDITING
+
     update: function(contact) {
-      console.warn('contactService.update not implemented!');
-      return contact;
+      return $http.post('/api/contacts/' + contact._id, contact);
+      //console.warn('contactService.update not implemented!');
+      //return contact;
     },
+
+    delete: function(id){
+      return $http.delete('app/contacts/'+ id);
+    },
+
 
     find: function(id) {
       return $http.get('/api/contacts/' + id)

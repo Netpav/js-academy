@@ -17,8 +17,10 @@ app.config(function($stateProvider){
         });
       // po pokliku na save update
       $scope.save = function(){
-        contactsService.update($scope.contact);
-        $state.go('show',{id: $scope.contact.id});
+        contactsService.update($scope.contact)
+          .then(function() {
+            $state.go('show', {id: $scope.contact._id});
+        });
       };
     }
   })
