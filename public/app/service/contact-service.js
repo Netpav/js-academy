@@ -16,9 +16,16 @@ app.factory('contactsService', function($http) {
     },
 
     delete: function(id){
-      return $http.delete('app/contacts/'+ id);
+      return $http.get('/api/contacts/' + id)
+        .then(function(res) {
+          return res.data;
+        });
     },
-
+    //TODO: Uprava pro fungovani
+    /* old version:
+    delete: function(id){
+     return $http.delete('app/contacts/'+ id);
+     },*/
 
     find: function(id) {
       return $http.get('/api/contacts/' + id)
