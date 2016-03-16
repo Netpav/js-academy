@@ -14,17 +14,19 @@ app.factory('contactsService', function($http) {
       //console.warn('contactService.update not implemented!');
       //return contact;
     },
-
+    /*create service for delete -- backend */
     delete: function(id){
-      return $http.get('/api/contacts/' + id)
-        .then(function(res) {
-          return res.data;
-        });
+      return $http.delete('/api/contacts/' + id);
     },
-    //TODO: Uprava pro fungovani
-    /* old version:
-    delete: function(id){
-     return $http.delete('app/contacts/'+ id);
+
+    //Myslenkove posuny
+    /*
+     delete: function(id){
+     return $http.get('/api/contacts/' + id)
+     .then(function(res) {
+     return res.data;
+     };
+
      },*/
 
     find: function(id) {

@@ -15,16 +15,12 @@ app.get('/helloworld', function(req,res){
 app.get('/api/contacts', function(req, res) {
   contacts.findAll(function(err,docs){
     // osetreni chyb stavu
-    if (err){
+    if (err) {
       res.sendStatus(500);
-
-    }else if(!docs){
-      res.sendStatus(404);
     }
     else {
       res.json(docs);
     }
-
   });
 });
 
@@ -55,9 +51,9 @@ app.post('/api/contacts/:id',function(req, res){
   });
 
 });
-/// pro mazani
+/// definition state for delete
 
-app.delete('api/contacts/:id', function(req, res){
+app.delete('/api/contacts/:id', function(req, res){
   contacts.delete(req.params.id, function(err, cnt){
   if (err){
     res.sendStatus(500);

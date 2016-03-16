@@ -48,10 +48,9 @@ module.exports = {
   update: function (id, contact, cb) {
     contacts.update({_id: id}, contact, {}, cb)
   },
-
+  // delete contact with specific id
   delete: function(id, cb) {
-    contacts.remove({_id: id}, {}, cb);
+    contacts.remove({_id: id},{}, cb);
+    console.log("Contact deleted " +id);
   }
-
-
 };

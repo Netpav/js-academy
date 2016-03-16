@@ -18,19 +18,17 @@ app.config(function($stateProvider){
           $scope.contact=contact;
         });
 
-/* TODO: DELETE
-     // po pokliku na delete delete
-      $scope.delete = function() {
-        contactsService.delete($scope.contact)
-          .then(function () {
-            $state.go('home')
+       // Delete scope -- usage function for delete
+      /* When i click delete, after that come to home page*/
+       $scope.delete = function() {
+        contactsService
+          .delete($stateParams.id)
+          .then(function() {
+            $state.go('home');
           });
-      }*/
-
-      //$scope.contact = contactsService.find( $stateParams.id);
-
+      };
     }
-  })
+  });
 });
 
 
